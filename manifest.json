@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+    "version": "0.1", //Версия, при обновлении должна меняться
+  "name": "copyTable", //Название расширения
+  "description": "blablalabla", //Краткое описание
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+  "http://*/*",
+  "https://*/*",
+  "contextMenus",
+  "unlimitedStorage",
+  "storage",
+  "tabs",
+  "notifications",
+  "system.storage",
+  "idle",
+  "management",
+  "activeTab",
+  "bookmarks",
+  "notifications",
+  "downloads",
+  "webRequest",
+  "webRequestBlocking",
+  "https://www.google-analytics.com/",
+  "http://*/*",
+   "https://*/*",
+   "\u003Call_urls>"
+],
+"web_accessible_resources": [ "tablecopy.js", "/injected.js" ],
+
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "matches": ["<all_urls>"],
+      "js": ["tablecopy.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
